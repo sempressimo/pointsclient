@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PointsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PointsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Claims" EntityType="PointsModel.Claims" />
+    <EntitySet Name="Customers" EntityType="PointsModel.Customers" />
+    <EntitySet Name="Reward_Categories" EntityType="PointsModel.Reward_Categories" />
+    <EntitySet Name="Rewards" EntityType="PointsModel.Rewards" />
+    <EntitySet Name="sysdiagrams" EntityType="PointsModel.sysdiagrams" />
+    <EntitySet Name="Transactions" EntityType="PointsModel.Transactions" />
+    <AssociationSet Name="FK_Claims_Customers" Association="PointsModel.FK_Claims_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Claims" EntitySet="Claims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Claims_Rewards" Association="PointsModel.FK_Claims_Rewards">
+      <End Role="Rewards" EntitySet="Rewards" />
+      <End Role="Claims" EntitySet="Claims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_Customers" Association="PointsModel.FK_Transactions_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rewards_Reward_Categories" Association="PointsModel.FK_Rewards_Reward_Categories">
+      <End Role="Reward_Categories" EntitySet="Reward_Categories" />
+      <End Role="Rewards" EntitySet="Rewards" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Claims">
+    <Key>
+      <PropertyRef Name="Claim_ID" />
+    </Key>
+    <Property Type="Int32" Name="Claim_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Customer_ID" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="Int32" Name="Reward_ID" />
+    <Property Type="Int32" Name="PointsUsed" />
+    <Property Type="String" Name="Address" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Town" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ZipCode" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customers" Relationship="PointsModel.FK_Claims_Customers" FromRole="Claims" ToRole="Customers" />
+    <NavigationProperty Name="Rewards" Relationship="PointsModel.FK_Claims_Rewards" FromRole="Claims" ToRole="Rewards" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Type="Int32" Name="Customer_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Customer_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone_Number" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VINs" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Claims" Relationship="PointsModel.FK_Claims_Customers" FromRole="Customers" ToRole="Claims" />
+    <NavigationProperty Name="Transactions" Relationship="PointsModel.FK_Transactions_Customers" FromRole="Customers" ToRole="Transactions" />
+  </EntityType>
+  <EntityType Name="Reward_Categories">
+    <Key>
+      <PropertyRef Name="Reward_Category_ID" />
+    </Key>
+    <Property Type="Int32" Name="Reward_Category_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Reward_Category_Description" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Rewards" Relationship="PointsModel.FK_Rewards_Reward_Categories" FromRole="Reward_Categories" ToRole="Rewards" />
+  </EntityType>
+  <EntityType Name="Rewards">
+    <Key>
+      <PropertyRef Name="Reward_ID" />
+    </Key>
+    <Property Type="Int32" Name="Reward_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Reward_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Reward_Category_ID" />
+    <Property Type="String" Name="Reward_Description" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Cost" />
+    <Property Type="Boolean" Name="IsActive" />
+    <NavigationProperty Name="Claims" Relationship="PointsModel.FK_Claims_Rewards" FromRole="Rewards" ToRole="Claims" />
+    <NavigationProperty Name="Reward_Categories" Relationship="PointsModel.FK_Rewards_Reward_Categories" FromRole="Rewards" ToRole="Reward_Categories" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Type="Int32" Name="Transaction_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Customer_ID" />
+    <Property Type="DateTime" Name="Transaction_Date" />
+    <Property Type="String" Name="RO_Number" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VIN" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Points" />
+    <NavigationProperty Name="Customers" Relationship="PointsModel.FK_Transactions_Customers" FromRole="Transactions" ToRole="Customers" />
+  </EntityType>
+  <Association Name="FK_Claims_Customers">
+    <End Type="PointsModel.Customers" Role="Customers" Multiplicity="0..1" />
+    <End Type="PointsModel.Claims" Role="Claims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Claims">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Claims_Rewards">
+    <End Type="PointsModel.Rewards" Role="Rewards" Multiplicity="0..1" />
+    <End Type="PointsModel.Claims" Role="Claims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rewards">
+        <PropertyRef Name="Reward_ID" />
+      </Principal>
+      <Dependent Role="Claims">
+        <PropertyRef Name="Reward_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_Customers">
+    <End Type="PointsModel.Customers" Role="Customers" Multiplicity="0..1" />
+    <End Type="PointsModel.Transactions" Role="Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rewards_Reward_Categories">
+    <End Type="PointsModel.Reward_Categories" Role="Reward_Categories" Multiplicity="0..1" />
+    <End Type="PointsModel.Rewards" Role="Rewards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reward_Categories">
+        <PropertyRef Name="Reward_Category_ID" />
+      </Principal>
+      <Dependent Role="Rewards">
+        <PropertyRef Name="Reward_Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,66 @@
+﻿
+.wrapper 
+{
+    margin:5% auto;
+    width:50%;
+}
+
+
+
+.errorlabel 
+{
+    padding:10px;
+    width:90%;
+    text-align:left;
+    color:Red;
+    font-weight:normal;
+    border:1px dotted red;
+    visibility:hidden;
+    display:none;
+    margin:40px auto;
+}
+
+.login-detail
+{
+    list-style-type: none;
+    margin: auto;
+	margin:10px auto;
+    padding: 0;
+	width:auto !important;
+}
+
+.login-detail li
+{
+    padding:5px;
+    text-align:center;
+    list-style-image:none;
+    border:0px solid red;
+}
+
+.login-detail li a
+{
+   color:#fff;
+	text-decoration:underline;
+}
+
+.login-detail li a:hover
+{
+    color:#fff;
+	text-decoration:underline;
+}
+
+
+
+hr  
+{
+    border-top:1px dotted #999;
+    margin:20px auto;
+}
+
+.loginfooter
+{
+    padding:20px;
+    text-align:center;
+    color:#fff;
+    font-size:11px !important;
+}

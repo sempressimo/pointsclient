@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PointsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PointsModelStoreContainer">
+    <EntitySet Name="Claims" EntityType="PointsModel.Store.Claims" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="PointsModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reward_Categories" EntityType="PointsModel.Store.Reward_Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rewards" EntityType="PointsModel.Store.Rewards" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="PointsModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transactions" EntityType="PointsModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Claims_Customers" Association="PointsModel.Store.FK_Claims_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Claims" EntitySet="Claims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Claims_Rewards" Association="PointsModel.Store.FK_Claims_Rewards">
+      <End Role="Rewards" EntitySet="Rewards" />
+      <End Role="Claims" EntitySet="Claims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rewards_Reward_Categories" Association="PointsModel.Store.FK_Rewards_Reward_Categories">
+      <End Role="Reward_Categories" EntitySet="Reward_Categories" />
+      <End Role="Rewards" EntitySet="Rewards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_Customers" Association="PointsModel.Store.FK_Transactions_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Claims">
+    <Key>
+      <PropertyRef Name="Claim_ID" />
+    </Key>
+    <Property Name="Claim_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Reward_ID" Type="int" />
+    <Property Name="PointsUsed" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="Town" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Phone_Number" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="25" />
+    <Property Name="VINs" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reward_Categories">
+    <Key>
+      <PropertyRef Name="Reward_Category_ID" />
+    </Key>
+    <Property Name="Reward_Category_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Reward_Category_Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rewards">
+    <Key>
+      <PropertyRef Name="Reward_ID" />
+    </Key>
+    <Property Name="Reward_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Reward_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Reward_Category_ID" Type="int" />
+    <Property Name="Reward_Description" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="int" />
+    <Property Name="Transaction_Date" Type="datetime" />
+    <Property Name="RO_Number" Type="varchar" MaxLength="20" />
+    <Property Name="VIN" Type="varchar" MaxLength="20" />
+    <Property Name="Points" Type="int" />
+  </EntityType>
+  <Association Name="FK_Claims_Customers">
+    <End Role="Customers" Type="PointsModel.Store.Customers" Multiplicity="0..1" />
+    <End Role="Claims" Type="PointsModel.Store.Claims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Claims">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Claims_Rewards">
+    <End Role="Rewards" Type="PointsModel.Store.Rewards" Multiplicity="0..1" />
+    <End Role="Claims" Type="PointsModel.Store.Claims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rewards">
+        <PropertyRef Name="Reward_ID" />
+      </Principal>
+      <Dependent Role="Claims">
+        <PropertyRef Name="Reward_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rewards_Reward_Categories">
+    <End Role="Reward_Categories" Type="PointsModel.Store.Reward_Categories" Multiplicity="0..1" />
+    <End Role="Rewards" Type="PointsModel.Store.Rewards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reward_Categories">
+        <PropertyRef Name="Reward_Category_ID" />
+      </Principal>
+      <Dependent Role="Rewards">
+        <PropertyRef Name="Reward_Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_Customers">
+    <End Role="Customers" Type="PointsModel.Store.Customers" Multiplicity="0..1" />
+    <End Role="Transactions" Type="PointsModel.Store.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebPointsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://www.vaultgate.com/points/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://www.vaultgate.com/points/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.vaultgate.com/points/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfPointsService" />
+      <xsd:import schemaLocation="http://www.vaultgate.com/points/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPointsService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_RegisterPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPoints" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_RegisterPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_RegisterCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_RegisterCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_ClaimReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimReward" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_ClaimReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClaimRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetClaims_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaims" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetClaims_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetPointsBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointsBalance" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetPointsBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointsBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatalog" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_CustomerExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerExists" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_CustomerExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_EraseTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:EraseTable" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_EraseTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EraseTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetRewards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewards" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetRewards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetRewardCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewardCost" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetRewardCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewardCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_SetClaimAsPaid_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetClaimAsPaid" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_SetClaimAsPaid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetClaimAsPaidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetClaim_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaim" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetClaim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClaimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetAllTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetAllTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetAllClaims_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClaims" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetAllClaims_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClaimsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetRewardCashForPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewardCashForPoints" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetRewardCashForPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewardCashForPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_RegisterReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterReward" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_RegisterReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReward" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_DeleteReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteReward" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_DeleteReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetAllRewardCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRewardCategories" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetAllRewardCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRewardCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateReward_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReward" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateReward_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetManagerPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetManagerPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetManagerPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetManagerPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateManagerPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateManagerPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateManagerPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateManagerPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetFilesPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesPath" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetFilesPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateFilesPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilesPath" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_UpdateFilesPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFilesPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_ROExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:ROExists" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_ROExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ROExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCustomerID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerID" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetCustomerID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPointsService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetData" message="tns:IPointsService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetDataResponse" message="tns:IPointsService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetDataUsingDataContract" message="tns:IPointsService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetDataUsingDataContractResponse" message="tns:IPointsService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/RegisterPoints" message="tns:IPointsService_RegisterPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/RegisterPointsResponse" message="tns:IPointsService_RegisterPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/RegisterCustomer" message="tns:IPointsService_RegisterCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/RegisterCustomerResponse" message="tns:IPointsService_RegisterCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetCustomer" message="tns:IPointsService_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetCustomerResponse" message="tns:IPointsService_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetTransactions" message="tns:IPointsService_GetTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetTransactionsResponse" message="tns:IPointsService_GetTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClaimReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/ClaimReward" message="tns:IPointsService_ClaimReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/ClaimRewardResponse" message="tns:IPointsService_ClaimReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaims">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetClaims" message="tns:IPointsService_GetClaims_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetClaimsResponse" message="tns:IPointsService_GetClaims_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointsBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetPointsBalance" message="tns:IPointsService_GetPointsBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetPointsBalanceResponse" message="tns:IPointsService_GetPointsBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetCustomers" message="tns:IPointsService_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetCustomersResponse" message="tns:IPointsService_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetCatalog" message="tns:IPointsService_GetCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetCatalogResponse" message="tns:IPointsService_GetCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/CustomerExists" message="tns:IPointsService_CustomerExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/CustomerExistsResponse" message="tns:IPointsService_CustomerExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/UpdateCustomer" message="tns:IPointsService_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/UpdateCustomerResponse" message="tns:IPointsService_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/DeleteCustomer" message="tns:IPointsService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/DeleteCustomerResponse" message="tns:IPointsService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/EraseTable" message="tns:IPointsService_EraseTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/EraseTableResponse" message="tns:IPointsService_EraseTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRewards">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetRewards" message="tns:IPointsService_GetRewards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetRewardsResponse" message="tns:IPointsService_GetRewards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetRewardCost" message="tns:IPointsService_GetRewardCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetRewardCostResponse" message="tns:IPointsService_GetRewardCost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClaimAsPaid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/SetClaimAsPaid" message="tns:IPointsService_SetClaimAsPaid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/SetClaimAsPaidResponse" message="tns:IPointsService_SetClaimAsPaid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetClaim" message="tns:IPointsService_GetClaim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetClaimResponse" message="tns:IPointsService_GetClaim_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetAllTransactions" message="tns:IPointsService_GetAllTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetAllTransactionsResponse" message="tns:IPointsService_GetAllTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClaims">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetAllClaims" message="tns:IPointsService_GetAllClaims_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetAllClaimsResponse" message="tns:IPointsService_GetAllClaims_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardCashForPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetRewardCashForPoints" message="tns:IPointsService_GetRewardCashForPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetRewardCashForPointsResponse" message="tns:IPointsService_GetRewardCashForPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/RegisterReward" message="tns:IPointsService_RegisterReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/RegisterRewardResponse" message="tns:IPointsService_RegisterReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetReward" message="tns:IPointsService_GetReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetRewardResponse" message="tns:IPointsService_GetReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/DeleteReward" message="tns:IPointsService_DeleteReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/DeleteRewardResponse" message="tns:IPointsService_DeleteReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRewardCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetAllRewardCategories" message="tns:IPointsService_GetAllRewardCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetAllRewardCategoriesResponse" message="tns:IPointsService_GetAllRewardCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReward">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/UpdateReward" message="tns:IPointsService_UpdateReward_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/UpdateRewardResponse" message="tns:IPointsService_UpdateReward_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetManagerPassword" message="tns:IPointsService_GetManagerPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetManagerPasswordResponse" message="tns:IPointsService_GetManagerPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/UpdateManagerPassword" message="tns:IPointsService_UpdateManagerPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/UpdateManagerPasswordResponse" message="tns:IPointsService_UpdateManagerPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetFilesPath" message="tns:IPointsService_GetFilesPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetFilesPathResponse" message="tns:IPointsService_GetFilesPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilesPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/UpdateFilesPath" message="tns:IPointsService_UpdateFilesPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/UpdateFilesPathResponse" message="tns:IPointsService_UpdateFilesPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ROExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/ROExists" message="tns:IPointsService_ROExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/ROExistsResponse" message="tns:IPointsService_ROExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetCustomerID" message="tns:IPointsService_GetCustomerID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetCustomerIDResponse" message="tns:IPointsService_GetCustomerID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPointsService" type="tns:IPointsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPoints">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/RegisterPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/RegisterCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimReward">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/ClaimReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaims">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetClaims" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointsBalance">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetPointsBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatalog">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerExists">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/CustomerExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseTable">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/EraseTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRewards">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetRewards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardCost">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetRewardCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClaimAsPaid">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/SetClaimAsPaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaim">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetClaim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTransactions">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetAllTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClaims">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetAllClaims" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRewardCashForPoints">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetRewardCashForPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterReward">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/RegisterReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReward">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReward">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/DeleteReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRewardCategories">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetAllRewardCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReward">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/UpdateReward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerPassword">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetManagerPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateManagerPassword">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/UpdateManagerPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesPath">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetFilesPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFilesPath">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/UpdateFilesPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ROExists">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/ROExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerID">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetCustomerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebPointsService">
+    <wsdl:port name="BasicHttpBinding_IPointsService" binding="tns:BasicHttpBinding_IPointsService">
+      <soap:address location="http://www.vaultgate.com/points/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

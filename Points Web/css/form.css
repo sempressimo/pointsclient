@@ -1,0 +1,619 @@
+
+.styled-select 
+{
+   width: 220px;
+   overflow: hidden;
+   background: url(../Images/arrow.png) no-repeat right #f7f7f7;
+   border:0px solid #ccc;
+   float:left;
+   -webkit-box-shadow:  0px 0px 14px 0px rgba(0, 0, 0, 0.15);
+    box-shadow:  0px 0px 14px 0px rgba(0, 0, 0, 0.15);
+
+ }
+
+.styled-select select 
+{
+   background: transparent;
+   width: 248px;
+   padding: 5px 0 5px 10px;
+   line-height: 1;
+   border:0;
+   -webkit-appearance: none;
+   text-transform:capitalize;
+    font-size:12px;
+
+}
+        @media screen\0 {
+    
+            .styled-select select
+            {
+                padding:10px;
+            }
+        }
+   
+.styled-select select option 
+{
+	padding:5px 10px;
+}
+
+textarea
+{
+    padding:10px;
+    border:1px solid #ccc;
+}
+/*-------------------------------------------------------------------------------------------------*/
+
+.styled-select,  input[type="text"], textarea, input[type="password"] 	{
+	border: 0px solid #ccc;
+	-webkit-box-shadow:  0px 0px 14px 0px rgba(0, 0, 0, 0.15);
+    box-shadow:  0px 0px 14px 0px rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	color:#000;
+    
+    -webkit-transition:background 2s;
+	transition:background 2s;
+	-webkit-transition:color .5s;
+	transition:color .5s;
+}
+
+.styled-select:focus,  input[type="text"]:focus,  textarea:focus, input[type="password"]:focus 	{
+	color:#fff !important;
+	background:#999 !important;
+}
+
+
+
+input[type="text"], input[type="password"], textarea
+{ 
+	background:#f7f7f7;
+	padding: 10px;
+	width: 210px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+
+.mybutton
+{
+	position:relative; 
+	display:inline-block;
+	padding:14px 16px;
+	width:auto;
+	width:auto;
+	border:0;
+	text-decoration:none !important;
+	color:#333;
+	font-weight:bold;
+	font-size:14px;
+	cursor:pointer;
+	text-align:center;
+	vertical-align:middle;
+	
+	-webkit-transition:background .5s;
+	transition:background .5s;
+
+}
+
+.mybutton:hover
+{
+	text-decoration:none;
+	background:#f37423 !important;
+	text-decoration:none;
+	color:#fff !important;
+}
+
+.mybutton img
+{
+    vertical-align:middle;
+    height:21px;
+}
+
+.mybutton span
+{
+    margin-left:10px !important;
+}
+
+/*-----------------------------     PROPIEDADES   -----------------------------------------------------------*/
+
+
+.whiteborder
+{
+    border:2px solid #fff !important;
+}
+
+.dottedwhite
+{
+    border:1px dotted #fff !important;
+}
+
+.blackborder
+{
+    border:1px solid #666 !important;
+}
+
+.blacktext
+{
+    color:#000 !important;
+}
+
+.whitetext
+{
+    color:#fff !important;
+}
+
+.rounded 
+{
+    border-radius: 10px !important;
+}
+
+.nobg
+{
+    background:none !important;
+}
+
+.white 
+{
+    background:rgba(255,255,255,.9) !important;
+}
+
+.whiteclear
+{
+    background:rgba(255,255,255,.4) !important;
+}
+
+.black
+{
+    background:rgba(0,0,0,1) !important;
+}
+
+.blackclear
+{
+    background:rgba(0,0,0,.6) !important;
+}
+
+.yellow
+{
+    background:#fbc735 !important;
+}
+
+.yellowclear
+{
+    background:rgba(251, 199, 53, .6) !important;
+}
+
+.orange 
+{
+   background:rgba(243, 116, 35, 1) !important;
+}
+
+.orangeclear
+{
+   background:rgba(243, 116, 35, .6) !important;
+}
+
+
+.red {
+	background:rgba(166, 24, 7, 1) !important;
+}
+
+.redclear {
+	background:rgba(166, 24, 7, .6) !important;
+}
+
+.blue 
+{
+    background:#3b5998 !important;
+}
+
+.blueclear
+{
+    background:rgba(59, 89, 152, .6) !important;
+}
+
+.clear
+{
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.full
+{
+    width:90%;
+}
+
+.shadow 
+{
+    -webkit-box-shadow:  0px 0px 20px 21px rgba(0, 0, 0, 0.3);
+    box-shadow:  0px 0px 20px 21px rgba(0, 0, 0, 0.3);
+}
+
+.glow 
+{
+    -webkit-box-shadow:  0px 0px 10px 1px rgba(255, 255, 255, 0.4);
+    box-shadow:  0px 0px 10px 1px rgba(255, 255, 255, 0.4);
+}
+
+.hidden
+{
+    display:none;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+ul.searchbar
+{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    text-align:center;
+}
+
+ul.searchbar li
+{
+    display:inline;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+ul.searchform 
+{
+    margin:auto;
+    padding:20px;
+    list-style-type:none;
+    text-align:center;
+    background:#333;
+    width:auto;
+}
+
+ul.searchform li
+{
+    display:inline;
+}
+
+ul.searchform li > a, ul.searchform li > div, ul.searchform li > input
+{
+
+    float:left;
+    margin-right:10px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+.myform li .styled-select
+{
+    display:block;
+}
+
+fieldset.formcontainer
+{
+    padding:30px 50px 40px;
+    margin:30px auto;
+
+    width:inherit;
+    display:block;
+}
+
+
+fieldset.formcontainer h2
+{
+    border:0;
+    padding:0;
+    margin:0;
+    color:#fff;
+    font-weight:lighter;
+    margin-bottom:20px;
+    font-size:22px;
+    letter-spacing:-0.5px;
+     -webkit-font-smoothing: antialiased !important;
+     text-shadow: 1px 1px 1px rgba(255,255,255,0.01);
+}
+
+
+fieldset.formcontainer > legend
+{
+    padding:20px;
+    border:0;
+    width:auto !important;
+    margin:0 !important;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+.myform 
+{
+    padding:10px;
+    list-style-type:none;
+    text-align:left; 
+    display:block;
+    padding:0px;
+}
+
+.myform li
+{
+    display:inline; margin:10px; border:1px solid red; 
+}
+
+.myform li > span, .myform li > input
+{
+    display:block;
+}
+
+
+
+.myform input[type="image"], .myform a > img
+{
+    padding:10px;
+    background:#00233b;
+}
+
+.myform input[type="image"]:hover, .myform a > img:hover
+{
+    background:#950815;
+}
+
+
+.left
+{
+    float:left !important;
+}
+
+.right
+{
+    float:right !important;
+}
+
+.half
+{
+    width:70% !important;
+}
+
+
+.all
+{
+    width:100%  !important;
+}
+/*-------------------------------------------------------------------------------------------------*/
+
+fieldset.formcontainer table
+{
+    width:100%;
+    border:0px solid red;
+    margin:auto;
+}
+
+fieldset.formcontainer table td span
+{
+    display:block;
+    font-weight:bold;
+}
+
+fieldset.formcontainer table td, fieldset.formcontainer table th
+{
+    padding:8px;
+    text-align:left;
+    font-size:12px;
+    vertical-align:top;
+}
+
+
+fieldset.formcontainer table td ul
+{
+    padding:10px;
+    list-style-type:none;
+    text-align:left; 
+    display:block;
+    padding:0px;
+}
+
+
+
+input[type="checkbox"]
+{
+    margin-right:10px;
+    border:0;
+
+}
+
+
+
+fieldset.formcontainer table input[type="image"]
+{
+	position:relative; 
+	padding:11px 25px;	
+	border:0;
+	
+	-webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 10px;
+	background:#034181;
+ 
+	color:#fff;
+	font-weight:bold;
+	
+	cursor:pointer;
+	
+	-webkit-box-shadow:  0px 0px 10px 1px rgba(0, 0, 0, 0.05);
+    box-shadow:  0px 0px 10px 1px rgba(0, 0, 0, 0.05);
+}
+
+fieldset.formcontainer table input[type="image"]:hover
+{
+	background:#f4ee82;
+	text-decoration:none;
+	color:#333;
+}
+
+li.active > a:focus
+{
+    background:rgba(0,144,206,1) !important;
+}
+
+.ui-widget-header 
+{
+    background:none;
+    border:none;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+.searchpanel
+{
+    margin:10px auto;
+    width:auto;
+    display:block;
+    padding:20px;
+}
+
+.searchpanel legend
+{
+    width:auto;
+    font-size:14px;
+    border:0;
+    padding:10px 20px;
+    font-weight:bold;
+    margin:0 !important;
+}
+
+.searchpanel .mybutton
+{
+    vertical-align:middle;
+
+    display:inline-block;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.searchpanel .mybutton > img
+{
+    vertical-align:middle;
+    height:21px;
+
+}
+
+.searchpanel ul
+{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+.searchpanel li
+{
+    display:inline-block;
+    padding:0;
+    margin:0 15px 15px 0;
+
+}
+
+.searchpanel li > input[type="text"]
+{
+    width:130px;
+    color:#000 !important;
+}
+
+.searchpanel li > input[type="text"]:focus
+{
+    width:130px;
+    color:#fff !important;
+}
+
+.searchpanel .searchform
+{
+    float:left;
+}
+
+.searchform
+{
+	text-align:left;
+}
+
+.searchform	input[type="text"] 
+{ 
+	padding:12px 20px 12px;
+	margin:3px;
+	color:#000;
+	border:0;
+	width:300px;
+	-webkit-border-radius: 10px 0px 0px 10px;
+	border-radius: 10px 0px 0px 10px;
+	
+	border-left:1px #fff solid;
+	border-top:1px #fff solid;
+	border-bottom:1px #fff solid;
+	
+	box-shadow:none !important;
+}
+
+.searchform	a
+{
+	position:relative; 
+	padding:14px 20px;
+	border:0;
+	
+	border-right:1px #fff solid;
+	border-top:1px #fff solid;
+	border-bottom:1px #fff solid;
+	
+	-webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+	left:-10px;
+	font-weight:bold;
+	
+	cursor:pointer;
+}
+
+.searchform	a:hover
+{
+	background:#693;
+}
+
+.searchform	a > img, .searchform a > input[type="image"]
+{
+    height:24px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+.search_btn
+{
+	position:relative; 
+	padding:10px 18px 9px;	
+	border:0;
+	
+	-webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 10px;
+	background:#2874A5;
+	color:#fff;
+	font-weight:bold;
+	
+	cursor:pointer;
+	
+	-webkit-box-shadow:  0px 0px 10px 1px rgba(0, 0, 0, 0.05);
+    box-shadow:  0px 0px 10px 1px rgba(0, 0, 0, 0.05);
+}
+
+.search_btn:hover
+{
+	background:#5ca7d7;
+	text-decoration:none;
+	color:#fff;
+}
+
+.search_btn > img, .search_btn > input[type="image"]
+{
+    height:20px;
+}
+
+
+.tab-pane .mybutton 
+    {
+        margin:10px 0;
+        display:inline-block;
+    }

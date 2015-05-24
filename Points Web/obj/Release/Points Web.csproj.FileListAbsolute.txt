@@ -1,0 +1,8 @@
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\Points Web.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\Points Web.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\zxing.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\zxing.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\zxing.xml
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Release\Points Web.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Release\Points Web.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Release\Points Web.csprojResolveAssemblyReference.cache

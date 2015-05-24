@@ -1,0 +1,5 @@
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\WcfPointsService\bin\WcfPointsService.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\WcfPointsService\bin\WcfPointsService.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\WcfPointsService\obj\Release\WcfPointsService.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\WcfPointsService\obj\Release\WcfPointsService.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\WcfPointsService\obj\Release\WcfPointsService.csprojResolveAssemblyReference.cache

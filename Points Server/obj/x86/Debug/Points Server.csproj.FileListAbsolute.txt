@@ -1,0 +1,10 @@
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\bin\Debug\Points Server.exe.config
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points_Server.frmCustomersFilePath.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points_Server.frmMain.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points_Server.Properties.Resources.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points Server.csproj.GenerateResource.Cache
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\bin\Debug\Points Server.exe
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\bin\Debug\Points Server.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points Server.exe
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points Server.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Server\obj\x86\Debug\Points_Server.frmInitDB.resources

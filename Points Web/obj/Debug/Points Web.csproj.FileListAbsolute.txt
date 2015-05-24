@@ -1,0 +1,17 @@
+C:\Users\sempressimo\documents\visual studio 2010\Projects\Points Client\Points Web\bin\Points Web.dll
+C:\Users\sempressimo\documents\visual studio 2010\Projects\Points Client\Points Web\bin\Points Web.pdb
+C:\Users\sempressimo\documents\visual studio 2010\Projects\Points Client\Points Web\obj\Debug\Points Web.dll
+C:\Users\sempressimo\documents\visual studio 2010\Projects\Points Client\Points Web\obj\Debug\Points Web.pdb
+C:\Users\sempressimo\documents\visual studio 2010\Projects\Points Client\Points Web\obj\Debug\Points Web.csprojResolveAssemblyReference.cache
+C:\Users\AHCVIRTUALFF\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\Points Web.dll
+C:\Users\AHCVIRTUALFF\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\Points Web.pdb
+C:\Users\AHCVIRTUALFF\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Debug\Points Web.csprojResolveAssemblyReference.cache
+C:\Users\AHCVIRTUALFF\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Debug\Points Web.dll
+C:\Users\AHCVIRTUALFF\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Debug\Points Web.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\Points Web.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\Points Web.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\zxing.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\zxing.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\bin\zxing.xml
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Debug\Points Web.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Web\obj\Debug\Points Web.pdb

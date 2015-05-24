@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c4fb273-dabb-460b-a4dd-d2f7740ad4d8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.vaultgate.com/points/service1.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="9efb6eb0-4e12-451e-812e-a0682288e4a8" SourceId="1" SourceUrl="http://www.vaultgate.com/points/Service1.svc?disco" />
+    <MetadataFile FileName="WebPointsService.wsdl" MetadataType="Wsdl" ID="b84dc608-3d86-4a65-825b-fe1aef96848f" SourceId="1" SourceUrl="http://www.vaultgate.com/points/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="11c7eadf-9d07-4436-95ab-aa0048220763" SourceId="1" SourceUrl="http://www.vaultgate.com/points/Service1.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="51ea2348-6ec4-42d6-b207-bc9d8ca4e3de" SourceId="1" SourceUrl="http://www.vaultgate.com/points/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="2bea4ebb-f4c4-4e1a-9cbd-a6936cc833bf" SourceId="1" SourceUrl="http://www.vaultgate.com/points/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="9739ed19-67c0-4518-b00f-8e38d42439ce" SourceId="1" SourceUrl="http://www.vaultgate.com/points/Service1.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

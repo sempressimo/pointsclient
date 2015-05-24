@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\temp\Publish Folder\points" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/WcfPointsService.dll" publishTime="02/18/2015 13:22:25" />
+    <file relUrl="Service1.svc" publishTime="10/29/2014 16:48:46" />
+    <file relUrl="bin/WcfPointsService.pdb" publishTime="02/18/2015 13:22:25" />
+    <file relUrl="Web.config" publishTime="02/18/2015 13:52:28" />
+  </publishProfile>
+</publishData>

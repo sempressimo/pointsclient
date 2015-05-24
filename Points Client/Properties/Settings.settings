@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Points_Client.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BackupFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\TEMP\POINTS</Value>
+    </Setting>
+    <Setting Name="PointsConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=(local);Initial Catalog=Points;User ID=sa;Password=q1w2e3r4&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(local);Initial Catalog=Points;User ID=sa;Password=q1w2e3r4</Value>
+    </Setting>
+    <Setting Name="CustomersFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Temp\Customers.csv</Value>
+    </Setting>
+    <Setting Name="CustomersProcessedFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Temp\Processed\Customers.csv</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

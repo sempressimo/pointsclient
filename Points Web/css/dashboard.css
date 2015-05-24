@@ -1,0 +1,81 @@
+﻿.mypanel 
+{
+    margin:auto;
+    background:rgba(0,0,0,0.2);
+    padding:10px;
+    padding-top:10px;
+    margin:0;
+	text-align:center;
+}
+
+.mypanel table {
+	width:100%;
+}
+
+.mypanel tr:nth-child(even)
+{
+   background:rgba(0,0,0,0.05);
+}
+
+.mypanel tr:last-child
+{
+    border:0;
+}
+
+.mypanel th, .mypanel td
+{
+    padding-left:10px;
+    text-align:left;
+    padding:5px;
+}
+
+.mypanel td:first-child {
+    background:rgba(0,0,0,0.08);
+}
+
+
+.mypanel > legend
+{
+    border:0;
+    width:auto;
+    margin:0 0 20px 20px !important;
+     padding:15px 20px !important;
+     font-size:16px; 
+     font-weight:bold;
+     letter-spacing:.2px;
+     text-align:left; 
+     text-transform:uppercase;
+	color:#fff;
+}
+
+/*----------------------------------------------------------------------------------------*/
+
+
+.stats_table 
+{
+    margin-bottom:30px !important;
+    width:auto;
+}
+
+.stats_table th
+{
+    font-size:28px !important;
+    font-weight:normal !important;
+    padding:8px 0 0px !important;
+}
+
+.stats_table td
+{
+    padding:0px 0 12px !important;
+}
+
+.stats_table th, .stats_table td
+{
+    text-align:center !important;
+    
+}
+
+.stats_table th:nth-child(even), .stats_table td:nth-child(even)
+{
+   background:rgba(0,0,0,0.1);
+}

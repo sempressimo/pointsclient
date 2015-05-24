@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A80785B-9918-4C0A-B237-8BEE97B8BCAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Points_Client</RootNamespace>
+    <AssemblyName>Points Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CGlobals.cs" />
+    <Compile Include="dsClaims.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsClaims.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsTransactions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTransactions.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminPassword.Designer.cs">
+      <DependentUpon>frmAdminPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackup.Designer.cs">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCatalog.Designer.cs">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClaimPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaimPoints.Designer.cs">
+      <DependentUpon>frmClaimPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomersFilePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomersFilePath.Designer.cs">
+      <DependentUpon>frmCustomersFilePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGiftPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiftPoints.Designer.cs">
+      <DependentUpon>frmGiftPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportCustomers.Designer.cs">
+      <DependentUpon>frmImportCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInitDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInitDB.Designer.cs">
+      <DependentUpon>frmInitDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisterCustomer.Designer.cs">
+      <DependentUpon>frmRegisterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterPoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisterPoints.Designer.cs">
+      <DependentUpon>frmRegisterPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportViewer2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportViewer2.Designer.cs">
+      <DependentUpon>frmReportViewer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReward.Designer.cs">
+      <DependentUpon>frmReward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewCustomers.Designer.cs">
+      <DependentUpon>frmViewCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PointsServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Claims.rdlc" />
+    <EmbeddedResource Include="frmAdminPassword.resx">
+      <DependentUpon>frmAdminPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackup.resx">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCatalog.resx">
+      <DependentUpon>frmCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClaimPoints.resx">
+      <DependentUpon>frmClaimPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomersFilePath.resx">
+      <DependentUpon>frmCustomersFilePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiftPoints.resx">
+      <DependentUpon>frmGiftPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportCustomers.resx">
+      <DependentUpon>frmImportCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInitDB.resx">
+      <DependentUpon>frmInitDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterCustomer.resx">
+      <DependentUpon>frmRegisterCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterPoints.resx">
+      <DependentUpon>frmRegisterPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportViewer2.resx">
+      <DependentUpon>frmReportViewer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReward.resx">
+      <DependentUpon>frmReward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewCustomers.resx">
+      <DependentUpon>frmViewCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="app.config" />
+    <None Include="dsClaims.xsc">
+      <DependentUpon>dsClaims.xsd</DependentUpon>
+    </None>
+    <None Include="dsClaims.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsClaims.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsClaims.xss">
+      <DependentUpon>dsClaims.xsd</DependentUpon>
+    </None>
+    <None Include="dsTransactions.xsc">
+      <DependentUpon>dsTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="dsTransactions.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTransactions.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsTransactions.xss">
+      <DependentUpon>dsTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\PointsServiceReference\Points_Client.PointsServiceReference.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PointsServiceReference\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PointsServiceReference\Service141.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PointsServiceReference\Service142.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PointsServiceReference\Service143.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PointsServiceReference\WebPointsService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PointsServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PointsServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PointsServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PointsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PointsServiceReference\Service11.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,29 @@
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\bin\Release\Points Client.exe.config
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\bin\Release\Points Client.exe
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\bin\Release\Points Client.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\bin\Release\Microsoft.ReportViewer.Common.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\bin\Release\Microsoft.ReportViewer.WinForms.dll
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\bin\Release\Microsoft.ReportViewer.WinForms.xml
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmAdminPassword.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmBackup.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmCatalog.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmChangePassword.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmClaimPoints.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmCustomersFilePath.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmGiftPoints.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmImportCustomers.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmInitDB.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmMain.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmRegisterCustomer.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmRegisterPoints.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmReportViewer.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmReportViewer2.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmReward.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.frmViewCustomers.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points_Client.Properties.Resources.resources
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points Client.csproj.GenerateResource.Cache
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\RdlCompile.cache
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\RdlCompile.compiled
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points Client.exe
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points Client.pdb
+C:\Users\sempressimo\Documents\Visual Studio 2010\Projects\Points system\Points Client\obj\x86\Release\Points Client.csprojResolveAssemblyReference.cache
