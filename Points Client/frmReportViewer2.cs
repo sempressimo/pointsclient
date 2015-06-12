@@ -53,6 +53,8 @@ namespace Points_Client
         {
             try
             {
+                Cursor = Cursors.WaitCursor;
+
                 PointsServiceClient c = new PointsServiceClient();
 
                 //
@@ -60,6 +62,16 @@ namespace Points_Client
                 //
                 switch (this.ReportName)
                 {
+                    case "Balance":
+                        {
+                            DataTable dt = c.GetBalanceReport(CGlobals.AppKey, false);
+
+                            dv = new DataView(dt);
+
+                            //dv.RowFilter = "Transaction_Date >= '" + this.dateTimePicker1.Value.ToShortDateString() + "' AND Transaction_Date <= '" + this.dateTimePicker2.Value.ToShortDateString() + "'";
+                        }
+                        break;
+
                     case "Transactions":
                         {
                             DataTable dt = c.GetAllTransactions(CGlobals.AppKey);
@@ -101,6 +113,10 @@ namespace Points_Client
             catch (Exception E)
             {
                 MessageBox.Show(E.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 
