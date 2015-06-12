@@ -46,6 +46,8 @@ namespace Points_Server
             }
         }
 
+        string ImportPath = "";
+
         private void frmCustomersFilePath_Load(object sender, EventArgs e)
         {
             try
@@ -53,6 +55,8 @@ namespace Points_Server
                 PointsServiceClient c = new PointsServiceClient();
 
                 this.txtPath.Text = c.GetFilesPath(CGlobals.AppKey, 1);
+
+                this.ImportPath = this.txtPath.Text;
             }
             catch (Exception E)
             {
