@@ -20,6 +20,12 @@
   <wsdl:message name="IPointsService_GetDataUsingDataContract_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
+  <wsdl:message name="IPointsService_GetBalanceReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceReport" />
+  </wsdl:message>
+  <wsdl:message name="IPointsService_GetBalanceReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceReportResponse" />
+  </wsdl:message>
   <wsdl:message name="IPointsService_RegisterPoints_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterPoints" />
   </wsdl:message>
@@ -215,6 +221,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetDataUsingDataContract" message="tns:IPointsService_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetDataUsingDataContractResponse" message="tns:IPointsService_GetDataUsingDataContract_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetBalanceReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/GetBalanceReport" message="tns:IPointsService_GetBalanceReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/GetBalanceReportResponse" message="tns:IPointsService_GetBalanceReport_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="RegisterPoints">
       <wsdl:input wsaw:Action="http://tempuri.org/IPointsService/RegisterPoints" message="tns:IPointsService_RegisterPoints_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPointsService/RegisterPointsResponse" message="tns:IPointsService_RegisterPoints_OutputMessage" />
@@ -353,6 +363,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <soap:operation soapAction="http://tempuri.org/IPointsService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceReport">
+      <soap:operation soapAction="http://tempuri.org/IPointsService/GetBalanceReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
