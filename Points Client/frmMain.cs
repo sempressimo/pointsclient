@@ -428,5 +428,11 @@ namespace Points_Client
                 }
             }
         }
+
+        private void balancesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportViewer2 v = new frmReportViewer2("Balance");
+            v.ShowDialog();
+        }
     }
 }

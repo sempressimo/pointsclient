@@ -36,10 +36,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdGift = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gvClaims = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmdUsePoints = new System.Windows.Forms.Button();
             this.cmdRegisterPoints = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -81,13 +81,14 @@
             this.lblWS = new System.Windows.Forms.ToolStripStatusLabel();
             this.cmdOpenPortal = new System.Windows.Forms.Button();
             this.cmdReadCard = new System.Windows.Forms.Button();
+            this.balancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvClaims)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -190,6 +191,36 @@
             this.tabControl1.Size = new System.Drawing.Size(695, 285);
             this.tabControl1.TabIndex = 10;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.gvClaims);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(687, 256);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Premios Reclamados (doble clic para editar)";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // gvClaims
+            // 
+            this.gvClaims.AllowUserToAddRows = false;
+            this.gvClaims.AllowUserToDeleteRows = false;
+            this.gvClaims.AllowUserToOrderColumns = true;
+            this.gvClaims.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvClaims.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvClaims.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvClaims.Location = new System.Drawing.Point(3, 3);
+            this.gvClaims.Margin = new System.Windows.Forms.Padding(4);
+            this.gvClaims.MultiSelect = false;
+            this.gvClaims.Name = "gvClaims";
+            this.gvClaims.ReadOnly = true;
+            this.gvClaims.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvClaims.Size = new System.Drawing.Size(681, 250);
+            this.gvClaims.TabIndex = 9;
+            this.gvClaims.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvClaims_CellFormatting);
+            this.gvClaims.DoubleClick += new System.EventHandler(this.gvClaims_DoubleClick);
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -220,36 +251,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(701, 268);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.gvClaims);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(687, 256);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Premios Reclamados (doble clic para editar)";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // gvClaims
-            // 
-            this.gvClaims.AllowUserToAddRows = false;
-            this.gvClaims.AllowUserToDeleteRows = false;
-            this.gvClaims.AllowUserToOrderColumns = true;
-            this.gvClaims.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvClaims.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvClaims.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvClaims.Location = new System.Drawing.Point(3, 3);
-            this.gvClaims.Margin = new System.Windows.Forms.Padding(4);
-            this.gvClaims.MultiSelect = false;
-            this.gvClaims.Name = "gvClaims";
-            this.gvClaims.ReadOnly = true;
-            this.gvClaims.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvClaims.Size = new System.Drawing.Size(681, 250);
-            this.gvClaims.TabIndex = 9;
-            this.gvClaims.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvClaims_CellFormatting);
-            this.gvClaims.DoubleClick += new System.EventHandler(this.gvClaims_DoubleClick);
             // 
             // cmdUsePoints
             // 
@@ -501,7 +502,8 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.puntosRegaladosToolStripMenuItem,
             this.puntosObsequiadosToolStripMenuItem,
-            this.premiosReclamadosToolStripMenuItem});
+            this.premiosReclamadosToolStripMenuItem,
+            this.balancesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "&Reportes";
@@ -676,6 +678,13 @@
             this.cmdReadCard.UseVisualStyleBackColor = false;
             this.cmdReadCard.Click += new System.EventHandler(this.cmdReadCard_Click);
             // 
+            // balancesToolStripMenuItem
+            // 
+            this.balancesToolStripMenuItem.Name = "balancesToolStripMenuItem";
+            this.balancesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.balancesToolStripMenuItem.Text = "&Balances";
+            this.balancesToolStripMenuItem.Click += new System.EventHandler(this.balancesToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -703,10 +712,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvClaims)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -773,6 +782,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem premiosReclamadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem balancesToolStripMenuItem;
     }
 }
 
