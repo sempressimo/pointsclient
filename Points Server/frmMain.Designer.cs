@@ -35,6 +35,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendReminderEmailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forceRunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +53,8 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblNewEntries = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblEndpoint = new System.Windows.Forms.ToolStripStatusLabel();
+            this.emailSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -104,15 +108,29 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sendReminderEmailsToolStripMenuItem,
+            this.toolStripMenuItem4,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // sendReminderEmailsToolStripMenuItem
+            // 
+            this.sendReminderEmailsToolStripMenuItem.Name = "sendReminderEmailsToolStripMenuItem";
+            this.sendReminderEmailsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.sendReminderEmailsToolStripMenuItem.Text = "&Send reminder emails";
+            this.sendReminderEmailsToolStripMenuItem.Click += new System.EventHandler(this.sendReminderEmailsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(185, 6);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -126,6 +144,7 @@
             this.resetToolStripMenuItem,
             this.toolStripMenuItem2,
             this.configurationToolStripMenuItem,
+            this.emailSettingsToolStripMenuItem,
             this.initDBToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -194,7 +213,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -215,19 +234,40 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblNewEntries});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 398);
+            this.lblNewEntries,
+            this.lblEndpoint});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 396);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(668, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(668, 24);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblNewEntries
             // 
             this.lblNewEntries.BackColor = System.Drawing.Color.White;
+            this.lblNewEntries.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.lblNewEntries.Name = "lblNewEntries";
-            this.lblNewEntries.Size = new System.Drawing.Size(95, 17);
+            this.lblNewEntries.Size = new System.Drawing.Size(99, 19);
             this.lblNewEntries.Text = "Last import: N/A";
+            // 
+            // lblEndpoint
+            // 
+            this.lblEndpoint.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEndpoint.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lblEndpoint.Name = "lblEndpoint";
+            this.lblEndpoint.Size = new System.Drawing.Size(87, 19);
+            this.lblEndpoint.Text = "Endpoint: N/A";
+            // 
+            // emailSettingsToolStripMenuItem
+            // 
+            this.emailSettingsToolStripMenuItem.Name = "emailSettingsToolStripMenuItem";
+            this.emailSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emailSettingsToolStripMenuItem.Text = "&Email Settings";
+            this.emailSettingsToolStripMenuItem.Click += new System.EventHandler(this.emailSettingsToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -245,6 +285,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Points Server";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -278,6 +319,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblNewEntries;
+        private System.Windows.Forms.ToolStripStatusLabel lblEndpoint;
+        private System.Windows.Forms.ToolStripMenuItem sendReminderEmailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem emailSettingsToolStripMenuItem;
     }
 }
 

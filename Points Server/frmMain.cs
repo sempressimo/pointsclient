@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Points_Server.PointsService;
+using System.Xml;
+using System.Reflection;
 
 namespace Points_Server
 {
@@ -29,7 +31,9 @@ namespace Points_Server
 
         protected void LoadCustomers()
         {
-            string Filename = pService.GetFilesPath(CGlobals.AppKey, 1) + @"\Customers.csv";
+            string ImportPath = pService.GetFilesPath(CGlobals.AppKey, 1);
+
+            string Filename = ImportPath + @"\Customers.csv";
 
             this.WriteToOutput("Looking for " + Filename + "...");
 
@@ -41,7 +45,7 @@ namespace Points_Server
 
                 using (StreamReader sr = new StreamReader(Filename))
                 {
-                    FileContentArray = sr.ReadToEnd().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                    FileContentArray = sr.ReadToEnd().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
                 }
 
                 if (FileContentArray.Count() > 0)
@@ -51,6 +55,10 @@ namespace Points_Server
                         this.WriteToOutput("Customers.csv contains only 1 line. This can be a format error. Records must be ended with line feed and carriage return (Enter).");
 
                         return;
+                    }
+                    else if (FileContentArray.Count() == 2)
+                    {
+                        this.WriteToOutput("Customers.csv contains only 2 lines. This can be a format error. Records must be ended with line feed and carriage return (Enter).");
                     }
 
                     PointsServiceClient c = new PointsServiceClient();
@@ -109,9 +117,22 @@ namespace Points_Server
 
                     this.WriteToOutput("Customers.csv import complete. Summary: New (" + CGlobals.Count_New_Customers.ToString() + "), Existing(" + CGlobals.Count_Updated_Customers.ToString() + ").");
 
-                    File.Delete(Filename);
+                    string MoveTo = ImportPath + @"\imported";
 
-                    this.WriteToOutput("Customers.csv deleted.");
+                    if (!Directory.Exists(MoveTo))
+                    {
+                        MessageBox.Show("Backup directory: " + MoveTo + " does not exists. Will be created.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Directory.CreateDirectory(MoveTo);
+                    }
+
+                    string UniqueID = Guid.NewGuid().ToString();
+
+                    File.Move(Filename, MoveTo + @"\customers." + DateTime.Today.ToString("yyyyMMdd") + "." + UniqueID + ".csv");
+
+                    this.WriteToOutput(@"RO.csv moved to \imported.");
+
+                    File.WriteAllText(MoveTo + @"\customers_log." + DateTime.Today.ToString("yyyyMMdd") + "." + UniqueID + ".txt", this.txtOutput.Text);
                 }
                 else
                 {
@@ -124,7 +145,9 @@ namespace Points_Server
         {
             string[] FileContentArray;
 
-            string Filename = pService.GetFilesPath(CGlobals.AppKey, 1) + @"\RO.csv";
+            string ImportPath = pService.GetFilesPath(CGlobals.AppKey, 1);
+
+            string Filename = ImportPath + @"\RO.csv";
 
             this.WriteToOutput("Looking for " + Filename + "...");
 
@@ -132,7 +155,7 @@ namespace Points_Server
             {
                 using (StreamReader sr = new StreamReader(Filename))
                 {
-                    FileContentArray = sr.ReadToEnd().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                    FileContentArray = sr.ReadToEnd().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
                 }
 
                 this.WriteToOutput("File contains " + FileContentArray.Count().ToString() + " records...");
@@ -218,9 +241,22 @@ namespace Points_Server
 
                     this.WriteToOutput("RO.csv import complete. Summary: New (" + CGlobals.Count_New_RO.ToString() + "), Existing(" + CGlobals.Count_Repeated_RO.ToString() + "), Rejected(" + CGlobals.Count_Rejected_RO.ToString() + ").");
 
-                    File.Delete(Filename);
+                    string MoveTo = ImportPath + @"\imported";
 
-                    this.WriteToOutput("RO.csv deleted.");
+                    if (!Directory.Exists(MoveTo))
+                    {
+                        MessageBox.Show("Backup directory: " + MoveTo + " does not exists. Will be created.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Directory.CreateDirectory(MoveTo);
+                    }
+
+                    string UniqueID = Guid.NewGuid().ToString(); 
+
+                    File.Move(Filename, MoveTo + @"\ro." + DateTime.Today.ToString("yyyyMMdd") + "." + UniqueID + ".csv");
+
+                    this.WriteToOutput(@"RO.csv moved to \imported.");
+
+                    File.WriteAllText(MoveTo + @"\ro_log." + DateTime.Today.ToString("yyyyMMdd") + "." + UniqueID + ".txt", this.txtOutput.Text);
                 }
             }
         }
@@ -282,9 +318,26 @@ namespace Points_Server
             this.progressBar.Value = 0;
         }
 
+        public static Version GetPublishedVersion()
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            Assembly asmCurrent = System.Reflection.Assembly.GetExecutingAssembly();
+            string executePath = new Uri(asmCurrent.GetName().CodeBase).LocalPath;
+
+            xmlDoc.Load(executePath + ".manifest");
+            string retval = string.Empty;
+            if (xmlDoc.HasChildNodes)
+            {
+                retval = xmlDoc.ChildNodes[1].ChildNodes[0].Attributes.GetNamedItem("version").Value.ToString();
+            }
+            return new Version(retval);
+        }
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("(2014) CODEPR - Todos los derechos reservados.", "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Version v = GetPublishedVersion();
+
+            MessageBox.Show("(2014) CODEPR - Todos los derechos reservados." + Environment.NewLine + Environment.NewLine + "Version: " + v.Major + "." + v.MajorRevision + "." + v.Minor + "." + v.MinorRevision, "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -326,6 +379,80 @@ namespace Points_Server
         private void toogleDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.FullDetail = !this.FullDetail;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            PointsServiceClient c = new PointsServiceClient();
+
+            this.lblEndpoint.Text = "Service Endpoint: " + c.Endpoint.Address.Uri.AbsoluteUri;
+        }
+
+        private void sendReminderEmailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+
+                PointsServiceClient c = new PointsServiceClient();
+                DataTable Customers = c.GetBalanceReport(CGlobals.AppKey, false);
+
+                this.WriteToOutput("Sending email reminders to " + Customers.Rows.Count.ToString() + " customers, from host: " + Properties.Settings.Default.Smtp + ", Port: " + Properties.Settings.Default.Port + ", From: " + Properties.Settings.Default.From);
+
+                int LoopCtr = 0;
+                int MailsSent = 0;
+                int MailsNotSent = 0;
+
+                foreach (DataRow r in Customers.Rows)
+                {
+                    try
+                    {
+                        LoopCtr++;
+
+                        this.WriteToOutput("Sending email to " + r["email"].ToString());
+
+                        string Outcome = CGlobals.SendEmail(r["Email"].ToString(), r["Customer_Name"].ToString(), r["BAL"].ToString());
+
+                        if (Outcome == "Sent")
+                        {
+                            MailsSent++;
+
+                            if (LoopCtr % 10 == 0)
+                            {
+                                this.WriteToOutput(MailsSent.ToString() + " emails sent so far...");
+                            }
+                        }
+                        else
+                        {
+                            this.WriteToOutput(Outcome);
+                        }
+
+                        //break; // DEBUG
+                    }
+                    catch (Exception E)
+                    {
+                        MailsNotSent++;
+
+                        this.WriteToOutput(E.Message);
+                    }
+                }
+
+                this.WriteToOutput("Sending email complete. " + MailsSent.ToString() + " emails sent. " + MailsNotSent.ToString() + " had problems, check address.");
+            }
+            catch (Exception E)
+            {
+                this.WriteToOutput(E.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private void emailSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmailSettings E = new frmEmailSettings();
+            E.ShowDialog();
         }
     }
 }
