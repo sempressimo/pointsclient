@@ -197,6 +197,55 @@ namespace WcfPointsService
             }
         }
 
+        public DataTable GetBalanceReport(string Key, bool IncludeOnlyWithBalance)
+        {
+            if (Key != this.AppKey)
+            {
+                throw new Exception("Invalid security key.");
+            }
+
+            SqlConnection cn = null;
+
+            try
+            {
+                cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Points"].ConnectionString);
+                cn.Open();
+
+                string WhereStatement = "";
+                if (IncludeOnlyWithBalance)
+                {
+                    WhereStatement = "WHERE BAL > 0 ";
+                }
+
+                string Sql = "SELECT T.Customer_ID, CU.Customer_Name, CU.Email, CU.Phone_Number, COUNT(Transaction_ID) As Transactions, SUM(T.Points) As Points, ISNULL(C.PointsUsed, 0) AS PointsUsed, (SUM(Points) - ISNULL(PointsUsed,0)) AS BAL FROM Transactions T " +
+                    "LEFT JOIN (SELECT C.Customer_ID, SUM(C.PointsUsed) AS PointsUsed FROM Claims C	GROUP BY Customer_ID) C ON C.Customer_ID = T.Customer_ID INNER JOIN Customers CU ON CU.Customer_ID = T.Customer_ID " +
+                    WhereStatement +
+                    "GROUP BY T.Customer_ID, CU.Customer_Name, CU.Email, CU.Phone_Number, C.PointsUsed";
+
+                DataSet ds = new DataSet("dsBalance");
+
+                SqlDataAdapter da = new SqlDataAdapter(Sql, cn);
+                da.Fill(ds, "Balance");
+
+                if (ds != null)
+                {
+                    return ds.Tables["Balance"];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public DataTable GetCustomers(string Key, string SearchName)
         {
             if (Key != this.AppKey)
