@@ -18,6 +18,10 @@ namespace WcfPointsService
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+
+        [OperationContract]
+        DataTable GetBalanceReport(string Key, bool IncludeOnlyWithBalance);
+
         [OperationContract]
         void RegisterPoints(string Key, int Customer_ID, DateTime Transaction_Date, string RO_Number, string VIN, int Points, bool ManagerGift, string GiftReason);
 
