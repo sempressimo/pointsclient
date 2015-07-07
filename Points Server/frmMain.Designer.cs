@@ -46,6 +46,7 @@
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emailSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblNewEntries = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblEndpoint = new System.Windows.Forms.ToolStripStatusLabel();
-            this.emailSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -153,52 +153,59 @@
             // forceRunToolStripMenuItem
             // 
             this.forceRunToolStripMenuItem.Name = "forceRunToolStripMenuItem";
-            this.forceRunToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.forceRunToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.forceRunToolStripMenuItem.Text = "&Force Run";
             this.forceRunToolStripMenuItem.Click += new System.EventHandler(this.forceRunToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 6);
             // 
             // toogleDetailsToolStripMenuItem
             // 
             this.toogleDetailsToolStripMenuItem.Name = "toogleDetailsToolStripMenuItem";
-            this.toogleDetailsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.toogleDetailsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.toogleDetailsToolStripMenuItem.Text = "&Toogle Details";
             this.toogleDetailsToolStripMenuItem.Click += new System.EventHandler(this.toogleDetailsToolStripMenuItem_Click);
             // 
             // clearLogToolStripMenuItem
             // 
             this.clearLogToolStripMenuItem.Name = "clearLogToolStripMenuItem";
-            this.clearLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearLogToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.clearLogToolStripMenuItem.Text = "C&lear Log";
             this.clearLogToolStripMenuItem.Click += new System.EventHandler(this.clearLogToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 6);
             // 
             // configurationToolStripMenuItem
             // 
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.configurationToolStripMenuItem.Text = "&Configuration";
             this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
+            // 
+            // emailSettingsToolStripMenuItem
+            // 
+            this.emailSettingsToolStripMenuItem.Name = "emailSettingsToolStripMenuItem";
+            this.emailSettingsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.emailSettingsToolStripMenuItem.Text = "&Email Settings";
+            this.emailSettingsToolStripMenuItem.Click += new System.EventHandler(this.emailSettingsToolStripMenuItem_Click);
             // 
             // initDBToolStripMenuItem
             // 
             this.initDBToolStripMenuItem.Name = "initDBToolStripMenuItem";
-            this.initDBToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.initDBToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.initDBToolStripMenuItem.Text = "&Init DB";
             this.initDBToolStripMenuItem.Click += new System.EventHandler(this.initDBToolStripMenuItem_Click);
             // 
@@ -213,7 +220,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -248,6 +255,7 @@
             this.lblNewEntries.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lblNewEntries.IsLink = true;
             this.lblNewEntries.Name = "lblNewEntries";
             this.lblNewEntries.Size = new System.Drawing.Size(99, 19);
             this.lblNewEntries.Text = "Last import: N/A";
@@ -261,13 +269,6 @@
             this.lblEndpoint.Name = "lblEndpoint";
             this.lblEndpoint.Size = new System.Drawing.Size(87, 19);
             this.lblEndpoint.Text = "Endpoint: N/A";
-            // 
-            // emailSettingsToolStripMenuItem
-            // 
-            this.emailSettingsToolStripMenuItem.Name = "emailSettingsToolStripMenuItem";
-            this.emailSettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.emailSettingsToolStripMenuItem.Text = "&Email Settings";
-            this.emailSettingsToolStripMenuItem.Click += new System.EventHandler(this.emailSettingsToolStripMenuItem_Click);
             // 
             // frmMain
             // 

@@ -337,7 +337,7 @@ namespace Points_Server
         {
             Version v = GetPublishedVersion();
 
-            MessageBox.Show("(2014) CODEPR - Todos los derechos reservados." + Environment.NewLine + Environment.NewLine + "Version: " + v.Major + "." + v.MajorRevision + "." + v.Minor + "." + v.MinorRevision, "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("(2014) CODEPR (Ismael Placa) - Todos los derechos reservados." + Environment.NewLine + Environment.NewLine + "Version: " + v.Major + "." + v.MajorRevision + "." + v.Minor + "." + v.MinorRevision, "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -395,7 +395,7 @@ namespace Points_Server
                 Cursor = Cursors.WaitCursor;
 
                 PointsServiceClient c = new PointsServiceClient();
-                DataTable Customers = c.GetBalanceReport(CGlobals.AppKey, false);
+                DataTable Customers = c.GetBalanceReport(CGlobals.AppKey, true);
 
                 this.WriteToOutput("Sending email reminders to " + Customers.Rows.Count.ToString() + " customers, from host: " + Properties.Settings.Default.Smtp + ", Port: " + Properties.Settings.Default.Port + ", From: " + Properties.Settings.Default.From);
 
