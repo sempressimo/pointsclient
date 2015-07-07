@@ -20,7 +20,12 @@ namespace Points_Server
 
         static private string CreateEmailBody(string Customer, string Points)
         {
-            return "this is my test email body";
+            string Html = Properties.Settings.Default.EmailBody;
+
+            Html = Html.Replace("[Customer]", Customer);
+            Html = Html.Replace("[Points]", Points);
+            
+            return Html;
         }
 
         static public string SendEmail(string To, string CustomerName, string Balance)
@@ -30,11 +35,12 @@ namespace Points_Server
                 //MailMessage mail = new MailMessage("ismael.placa@gmail.com", r["email"].ToString());
                 MailMessage mail = new MailMessage(Properties.Settings.Default.From, To);
 
-                NetworkCredential basicCredential = new NetworkCredential("username", Properties.Settings.Default.Password);
+                NetworkCredential basicCredential = new NetworkCredential(Properties.Settings.Default.Username, Properties.Settings.Default.Password);
 
                 SmtpClient client = new SmtpClient();
                 client.Port = Convert.ToInt32(Properties.Settings.Default.Port);
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.EnableSsl = Properties.Settings.Default.EnableSSL;
 
                 if (Properties.Settings.Default.UseDefaultCredentials)
                 {
@@ -47,7 +53,7 @@ namespace Points_Server
                 }
 
                 client.Host = Properties.Settings.Default.Smtp;
-                mail.Subject = "Utilice sus puntos en Autocentro Toyota";
+                mail.Subject = Properties.Settings.Default.EmailSubject;
                 mail.Body = CreateEmailBody(CustomerName, Balance);
 
                 client.Send(mail);
